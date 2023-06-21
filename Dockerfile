@@ -1,13 +1,13 @@
-FROM golang
+FROM golang:alpine as builder
 
 WORKDIR /usr/src/goapp
 
-COPY go.mod ./
-
-RUN go mod verify
-
 COPY . .
 
-RUN go build ./...
+RUN CGO_ENABLED=0 go build -o /goapp main.go
 
-CMD [ "./challenge-fullcycle-13" ]
+FROM scratch
+
+COPY --from=builder /goapp /goapp
+
+CMD [ "./goapp" ]
