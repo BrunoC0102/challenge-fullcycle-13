@@ -1,3 +1,3 @@
-module brunocesar0102/fullcycle
+module github.com/BrunoC0102/challenge-fullcycle-13
 
 go 1.20

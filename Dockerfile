@@ -10,4 +10,4 @@ COPY . .
 
 RUN go build ./...
 
-CMD [ "./fullcycle" ]
+CMD [ "./challenge-fullcycle-13" ]
